@@ -6,7 +6,7 @@ import sys
 from setuptools import setup
 
 setup(name='pyPDB',
-          version='0.1',
+          version='0.1.4',
           description="Utilities for working with EPICS PDB files",
           author='Michael Davidsaver',
           author_email='mdavidsaver@gmail.com',
