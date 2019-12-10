@@ -1,0 +1,33 @@
+{% set data = load_setup_py_data() %}
+
+package:
+    name    : epics-pypdb
+    version : {{ data.get('version') }}
+
+source:
+    path: ..
+
+build:
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+    build:
+      - python
+      - setuptools
+      - ply
+
+    run:
+      - python
+      - ply
+test:
+    commands:
+      - python -m nose pyPDB
+
+    requires: 
+      - nose
+
+about:
+  home: https://github.com/pcdshub/epics-pypdb
+  license: EPICS Open 
+  summary: Python tools for EPICS Process Database
